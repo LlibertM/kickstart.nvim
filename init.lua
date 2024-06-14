@@ -154,6 +154,12 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- [[ Opcions PERSONALITZADES ]]
+-- Considerar paraules úniques les cadenes separades per guionets
+vim.opt.iskeyword:append '-'
+-- Considerar les l·l geminades com a paraules úniques
+vim.opt.iskeyword:append '·'
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -190,6 +196,10 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- [[ Keymaps PERSONALITZATS ]]
+vim.keymap.set('i', 'jk', '<Esc>')
+vim.keymap.set('i', 'JK', '<Esc>')
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -225,8 +235,11 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
+
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+
+  -- PERSONALITZAT: Mostrar fórmules latex en format text
   {
     'jbyuki/nabla.nvim',
     config = function()
