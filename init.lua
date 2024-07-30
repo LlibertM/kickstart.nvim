@@ -160,6 +160,10 @@ vim.opt.iskeyword:append '-'
 -- Considerar les l·l geminades com a paraules úniques
 vim.opt.iskeyword:append '·'
 
+vim.opt.wrap = true -- enable line wrapping
+vim.opt.linebreak = true -- Quan la línia és massa llarga fa que en la següent línia les paraules no es divideixin
+vim.opt.colorcolumn = '81' -- Afegeix una línia visual a la columna 81
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
