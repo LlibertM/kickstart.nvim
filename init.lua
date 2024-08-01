@@ -203,6 +203,12 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- [[ Keymaps PERSONALITZATS ]]
 vim.keymap.set('i', 'jk', '<Esc>')
 vim.keymap.set('i', 'JK', '<Esc>')
+vim.keymap.set('n', 'j', 'gj', { desc = 'Down' })
+vim.keymap.set('n', 'k', 'gk', { desc = 'Up' })
+vim.keymap.set('n', '|', '<cmd>vsplit<CR>', { desc = 'Vertical split' })
+vim.keymap.set('n', '\\', '<cmd>split<CR>', { desc = 'Horizontal split' })
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move text down' })
+vim.keymap.set('v', 'K', ":m '<-2<cr>gv=gv", { desc = 'Move text up' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
