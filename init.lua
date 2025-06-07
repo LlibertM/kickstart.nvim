@@ -124,7 +124,7 @@ vim.o.breakindent = true
 -- Enable word wrap
 vim.o.linebreak = true
 
-vim.o.colorcolumn = 81
+vim.o.colorcolumn = '81'
 
 -- Considerar paraules amb les cadenes separades per guionets
 vim.opt.iskeyword:append '-'
