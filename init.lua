@@ -126,6 +126,8 @@ vim.o.linebreak = true
 
 vim.o.colorcolumn = '81'
 
+-- WARNING: Esbrinar perquè dóna warning undefined fiels append
+
 -- Considerar paraules amb les cadenes separades per guionets
 vim.opt.iskeyword:append '-'
 -- Considerar les paraules amb l·l geminada com a paraules úniques
@@ -178,6 +180,22 @@ vim.o.confirm = true
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
+
+-- Alternativa per escapar en mode INSERT
+vim.keymap.set('i', 'jk', '<Esc>')
+vim.keymap.set('i', 'JK', '<Esc>')
+
+-- Per poder moure's igual quan el text està wrapped
+vim.keymap.set('n', 'j', 'gj', { desc = 'Down' })
+vim.keymap.set('n', 'k', 'gk', { desc = 'Up' })
+
+-- Dividir amb finestres
+vim.keymap.set('n', '|', '<cmd>vsplit<CR>', { desc = 'Vertical split' })
+vim.keymap.set('n', '\\', '<cmd>split<CR>', { desc = 'Horizontal split' })
+
+-- Moure text amb selecció visual amunt i avall
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move text down' })
+vim.keymap.set('v', 'K', ":m '<-2<cr>gv=gv", { desc = 'Move text up' })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
